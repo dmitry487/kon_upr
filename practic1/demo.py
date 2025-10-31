@@ -3,7 +3,7 @@
 Демонстрационный скрипт для этапа 1
 """
 
-from shell_emulator import ShellEmulator
+from practic1.src.shell_emulator import ShellEmulator
 
 def demo_stage1():
     """Демонстрация работы эмулятора"""
