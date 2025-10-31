@@ -10,7 +10,7 @@ sys.argv = [
     "--output", "graph.png"
 ]
 
-# Теперь подключаем настоящую логику
+# Теперь подключаем логику
 from repository_parser import get_direct_dependencies
 
 def main():
