@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph Preview</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Просмотр графа зависимостей</h2>
+    
+    <h3>Способ 1: Онлайн просмотр</h3>
+    <p>1. Перейдите на сайт: <a href="https://dreampuf.github.io/GraphvizOnline/" target="_blank">GraphvizOnline</a></p>
+    <p>2. Скопируйте код ниже и вставьте на сайт:</p>
+    <textarea rows="15" cols="80" style="font-family: monospace; font-size: 12px;" id="dotCode">
+digraph Dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [arrowsize=0.8];
+    graph [fontname="Arial"];
+    node [fontname="Arial"];
+    edge [fontname="Arial"];
+    "A" -> "B";
+    "A" -> "C";
+    "B" -> "D";
+    "B" -> "E";
+    "D" -> "H";
+    "H" -> "I";
+    "H" -> "J";
+    "C" -> "F";
+    "C" -> "G";
+    "G" -> "A  # Циклическая зависимость G -> A";
+    "X" -> "Y";
+    "X" -> "Z";
+    "Y" -> "Z";
+}
+    </textarea>
+    <br>
+    <button onclick="copyToClipboard()">Скопировать код</button>
+    
+    <h3>Способ 2: Прямая ссылка</h3>
+    <a href="https://dreampuf.github.io/GraphvizOnline/#digraph%20Dependencies%20%7B%0A%20%20%20%20rankdir%3DTB%3B%0A%20%20%20%20node%20%5Bshape%3Dbox%2C%20style%3Dfilled%2C%20fillcolor%3Dlightblue%5D%3B%0A%20%20%20%20edge%20%5Barrowsize%3D0.8%5D%3B%0A%20%20%20%20graph%20%5Bfontname%3D%22Arial%22%5D%3B%0A%20%20%20%20node%20%5Bfontname%3D%22Arial%22%5D%3B%0A%20%20%20%20edge%20%5Bfontname%3D%22Arial%22%5D%3B%0A%20%20%20%20%22A%22%20-%3E%20%22B%22%3B%0A%20%20%20%20%22A%22%20-%3E%20%22C%22%3B%0A%20%20%20%20%22B%22%20-%3E%20%22D%22%3B%0A%20%20%20%20%22B%22%20-%3E%20%22E%22%3B%0A%20%20%20%20%22D%22%20-%3E%20%22H%22%3B%0A%20%20%20%20%22H%22%20-%3E%20%22I%22%3B%0A%20%20%20%20%22H%22%20-%3E%20%22J%22%3B%0A%20%20%20%20%22C%22%20-%3E%20%22F%22%3B%0A%20%20%20%20%22C%22%20-%3E%20%22G%22%3B%0A%20%20%20%20%22G%22%20-%3E%20%22A%20%20%23%20%D0%A6%D0%B8%D0%BA%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20G%20-%3E%20A%22%3B%0A%20%20%20%20%22X%22%20-%3E%20%22Y%22%3B%0A%20%20%20%20%22X%22%20-%3E%20%22Z%22%3B%0A%20%20%20%20%22Y%22%20-%3E%20%22Z%22%3B%0A%7D" target="_blank">
+        Открыть граф в GraphvizOnline
+    </a>
+    
+    <h3>Способ 3: Локальный файл</h3>
+    <p>DOT файл сохранен: <strong>dependencies.dot</strong></p>
+
+    <script>
+        function copyToClipboard() {
+            const textarea = document.getElementById('dotCode');
+            textarea.select();
+            document.execCommand('copy');
+            alert('Код скопирован! Теперь вставьте его на сайт GraphvizOnline');
+        }
+    </script>
+</body>
+</html>
