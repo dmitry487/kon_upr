@@ -1,0 +1,21 @@
+digraph Dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [arrowsize=0.8];
+    graph [fontname="Arial"];
+    node [fontname="Arial"];
+    edge [fontname="Arial"];
+    "A" -> "B";
+    "A" -> "C";
+    "B" -> "D";
+    "B" -> "E";
+    "D" -> "H";
+    "H" -> "I";
+    "H" -> "J";
+    "C" -> "F";
+    "C" -> "G";
+    "G" -> "A  # Циклическая зависимость G -> A";
+    "X" -> "Y";
+    "X" -> "Z";
+    "Y" -> "Z";
+}
