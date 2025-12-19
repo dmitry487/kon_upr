@@ -1,0 +1,25 @@
+{
+  "program": [
+    {
+      "type": "load_const",
+      "constant": 693,
+      "address": 81
+    },
+    {
+      "type": "read_mem",
+      "result_addr": 94,
+      "source_addr": 29
+    },
+    {
+      "type": "write_mem",
+      "offset": 77,
+      "value_addr": 5,
+      "base_addr": 85
+    },
+    {
+      "type": "abs",
+      "result_addr": 86,
+      "source_addr": 26
+    }
+  ]
+}
